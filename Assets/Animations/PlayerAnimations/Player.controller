@@ -56,7 +56,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   m_BlendParameter: Speed
-  m_BlendParameterY: Blend
+  m_BlendParameterY: Rotation
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -518,6 +518,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: ShootingState
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Rotation
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0

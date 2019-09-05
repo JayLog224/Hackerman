@@ -5,19 +5,19 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Vector2 movementDirection;
+    public Camera cam;
+
+    Vector2 mousePos;
     public float MOVEMENT_BASE_SPEED = 1.0f;
-    public float SHOOTING_RECOIL_TIME = 1.0f;
     public float movementSpeed;
     public Animator animator;
-    public GameObject projectile;
-    public float shootingRecoil = 0;
 
     [SerializeField]
     Rigidbody2D rb;
 
     void Awake()
     {
-        Cursor.visible = false;
+
     }
 
     void FixedUpdate()
@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         ProcessInputs();
         Move();
         Animate();
+        LookAtMouse();
     }
 
     void ProcessInputs()
@@ -33,20 +34,24 @@ public class PlayerMovement : MonoBehaviour
         movementSpeed = Mathf.Clamp(movementDirection.magnitude, 0.0f, 5.0f);
         movementDirection.Normalize();
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
-
-        if (shootingRecoil > 0.0f)
-        {
-            shootingRecoil -= Time.deltaTime;
-        }
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void Move()
     {
         rb.velocity = movementDirection * movementSpeed * MOVEMENT_BASE_SPEED;
+    }
+
+    void LookAtMouse()
+    {
+        Vector2 lookDirection = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+
+        if (lookDirection != Vector2.zero)
+        {
+            animator.SetFloat("Horizontal", lookDirection.x);
+            animator.SetFloat("Vertical", lookDirection.y);
+        }
     }
 
     void Animate()
@@ -57,33 +62,5 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", movementDirection.y);
         }
         animator.SetFloat("Speed", movementSpeed);
-
-        if (shootingRecoil > 0.0f)
-        {
-            animator.SetFloat("ShootingState", 1.0f);
-        }
-        else
-        {
-            animator.SetFloat("ShootingState", 0.0f);
-        }
-
-    }
-
-    void Shoot()
-    {
-        Vector3 shootingDirection;
-        shootingDirection = Input.mousePosition;
-        shootingDirection.z = 0.0f;
-        shootingDirection = Camera.main.ScreenToWorldPoint(shootingDirection);
-        shootingDirection = shootingDirection - transform.position;
-
-        shootingDirection.Normalize();
-
-        GameObject tempProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-        tempProjectile.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
-
-        Destroy(tempProjectile, 3.0f);
-        shootingRecoil = SHOOTING_RECOIL_TIME;
-
     }
 }
