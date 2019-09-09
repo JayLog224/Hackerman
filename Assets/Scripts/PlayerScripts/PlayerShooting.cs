@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerShooting : MonoBehaviour
+using Assets.Scripts.GameUtils;
+public class PlayerShooting : DamageableEntity
 {
     public Transform firepoint;
     public GameObject bulletPrefab;
@@ -12,8 +12,11 @@ public class PlayerShooting : MonoBehaviour
     public float bulletForce = 20f;
     float shootingRecoil = 0;
 
-
-    // Update is called once per frame
+    public override void Start()
+    {
+        base.Start();
+    }
+    
     void Update()
     {
         ProcessInputs();
@@ -47,9 +50,6 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
-        //GameObject tempBullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-        //Rigidbody2D rb = tempBullet.GetComponent<Rigidbody2D>();
-        //rb.AddForce(firepoint.up * bulletForce, ForceMode2D.Impulse);
         Vector3 shootingDirection;
         shootingDirection = Input.mousePosition;
         shootingDirection.z = 0.0f;

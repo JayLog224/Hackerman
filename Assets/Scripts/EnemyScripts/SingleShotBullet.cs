@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class SingleShotBullet : MonoBehaviour
 {
-    public float speed = 5f;
-    public float damage = 1f;
-    public Rigidbody2D rb;
+    public float speed = 10f;
+    private float damage = 1f;
+    private Vector3 targetDirection;
 
-    void Update()
+    public void Awake()
     {
-        transform.position += transform.right * speed * Time.deltaTime;
+        targetDirection = (GameManager.Instance.player.transform.position - transform.position).normalized;
+        
+    }
+
+    void LateUpdate()
+    { 
+        transform.position += targetDirection * speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -28,9 +28,10 @@ public class SmoothFollow : MonoBehaviour
 
         camXLimit = bg.bounds.size.x/2 - camWidth / 2;
         camYLimit = bg.bounds.size.y/2 - camHeight / 2;
-        Debug.Log("x limit:" + camXLimit);
-        Debug.Log("y limit:" + camYLimit);
-        Debug.Log("cam rect x: " + camWidth + " cam rect y: " + camHeight);
+
+        //Debug.Log("x limit:" + camXLimit);
+        //Debug.Log("y limit:" + camYLimit);
+        //Debug.Log("cam rect x: " + camWidth + " cam rect y: " + camHeight);
     }
 
     // Update is called once per frame

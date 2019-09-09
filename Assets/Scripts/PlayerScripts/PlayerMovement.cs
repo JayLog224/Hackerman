@@ -15,11 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     Rigidbody2D rb;
 
-    void Awake()
-    {
-
-    }
-
     void FixedUpdate()
     {
         ProcessInputs();
