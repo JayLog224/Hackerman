@@ -28,30 +28,27 @@ public class SmoothFollow : MonoBehaviour
 
         camXLimit = bg.bounds.size.x/2 - camWidth / 2;
         camYLimit = bg.bounds.size.y/2 - camHeight / 2;
-
-        //Debug.Log("x limit:" + camXLimit);
-        //Debug.Log("y limit:" + camYLimit);
-        //Debug.Log("cam rect x: " + camWidth + " cam rect y: " + camHeight);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 mouseDir = (cursor.transform.position - target.position).normalized * 0.8f; //how to calculate vec3 direction and add in direction
+        if (target != null)
+        {
+            Vector2 mouseDir = (cursor.transform.position - target.position).normalized * 0.8f; //how to calculate vec3 direction and add in direction
 
-        Vector2 targetOffset = target.position + target.up * 0.5f ; // * offset si tuviera uno
+            Vector2 targetOffset = target.position + target.up * 0.5f; // * offset si tuviera uno
 
-        float posX = Mathf.SmoothDamp(transform.position.x, targetOffset.x + mouseDir.x, ref velocityX, dampX);
-        float posY = Mathf.SmoothDamp(transform.position.y, targetOffset.y + mouseDir.y, ref velocityY, dampY);
+            float posX = Mathf.SmoothDamp(transform.position.x, targetOffset.x + mouseDir.x, ref velocityX, dampX);
+            float posY = Mathf.SmoothDamp(transform.position.y, targetOffset.y + mouseDir.y, ref velocityY, dampY);
 
-        //Debug.Log("cam x: " + posX + " Cam y: " + posY);
-        
 
-         //chequear por el background
-        
-        transform.position = new Vector3(Mathf.Clamp(posX, -camXLimit, camXLimit),
-                                         Mathf.Clamp(posY, -camYLimit, camYLimit),
-                                         transform.position.z);
+            //chequear por el background
+
+            transform.position = new Vector3(Mathf.Clamp(posX, -camXLimit, camXLimit),
+                                             Mathf.Clamp(posY, -camYLimit, camYLimit),
+                                             transform.position.z);
+        }
     }
 
 

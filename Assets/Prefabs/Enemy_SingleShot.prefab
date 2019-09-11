@@ -40,8 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1494059837418955731}
   - component: {fileID: 1139605229932484575}
-  - component: {fileID: 983842831735051993}
   - component: {fileID: 9213110996573210946}
+  - component: {fileID: 983842831735051993}
   - component: {fileID: 478645361}
   - component: {fileID: 2022351804}
   m_Layer: 10
@@ -116,27 +116,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &983842831735051993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2604819342194824920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8fb934c258fb8458b9e90aff047e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHitpoints: 3
-  speed: 5
-  stoppingDistance: 8
-  retreatDistance: 4
-  startTimeBetweenShots: 1
-  projectile: {fileID: 3044749447882058376, guid: 4183b9c65fddedf4fb8eaf5850fa1102,
-    type: 3}
-  firepoint: {fileID: 665512000}
-  animator: {fileID: 478645361}
 --- !u!50 &9213110996573210946
 Rigidbody2D:
   serializedVersion: 4
@@ -158,6 +137,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &983842831735051993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604819342194824920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8fb934c258fb8458b9e90aff047e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHitpoints: 3
+  speed: 5
+  stoppingDistance: 8
+  retreatDistance: 4
+  neighbourDistance: 10
+  neighbourAvoidingDistance: 5
+  startTimeBetweenShots: 1
+  projectile: {fileID: 3044749447882058376, guid: 4183b9c65fddedf4fb8eaf5850fa1102,
+    type: 3}
+  firepoint: {fileID: 665512000}
+  animator: {fileID: 478645361}
 --- !u!95 &478645361
 Animator:
   serializedVersion: 3

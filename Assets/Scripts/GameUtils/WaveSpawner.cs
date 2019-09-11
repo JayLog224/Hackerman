@@ -6,7 +6,8 @@ using Assets.Scripts.GameUtils;
 public class WaveSpawner : MonoBehaviour
 {
     public Wave[] waves;
-    public EnemyAI enemy;
+    public GameObject enemy;
+    public List<GameObject> allEnemies;
 
     int enemiesRemainingToSpawn;
     int enemiesRemainingAlive;
@@ -17,17 +18,19 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-        NextWave(); //Begin wave 1...
+        NextWave(); //Begin wave 1...        
     }
     private void Update()
     {
         if (enemiesRemainingToSpawn > 0 && Time.time > nextSpawnTime)
         {
-            enemiesRemainingToSpawn--;
             nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
+            enemiesRemainingToSpawn--;
 
-            EnemyAI spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
-            spawnedEnemy.OnDeath += OnEnemyDeath;
+
+            GameObject spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            allEnemies.Add(spawnedEnemy);
+            spawnedEnemy.GetComponent<DamageableEntity>().OnDeath += OnEnemyDeath;
         }
     }
 
@@ -45,10 +48,13 @@ public class WaveSpawner : MonoBehaviour
         currentWaveNumber++;
         Debug.Log("Starting wave: " + currentWaveNumber);
 
+
         if (currentWaveNumber - 1 < waves.Length)
         {
             currentWave = waves[currentWaveNumber - 1];
+            allEnemies = new List<GameObject>();
             enemiesRemainingToSpawn = currentWave.enemyCount;
+            Debug.Log("Enemies to spawn: " + currentWave.enemyCount);
             enemiesRemainingAlive = enemiesRemainingToSpawn;
         }
     }

@@ -6,5 +6,5 @@ using GameUtils;
 public class GameManager : SingletonObject<GameManager>
 {
     public GameObject player;
-    
+    public WaveSpawner waveSpawner;
 }
