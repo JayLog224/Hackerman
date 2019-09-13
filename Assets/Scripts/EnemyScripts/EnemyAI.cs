@@ -44,7 +44,7 @@ public class EnemyAI : DamageableEntity
         if (target != null)
         {
             CheckDistanceFromTarget();
-            CheckDistanceBetweenNeighbours();
+            //CheckDistanceBetweenNeighbours();
             Shoot();
             Animate();
         }
@@ -91,8 +91,6 @@ public class EnemyAI : DamageableEntity
                     if (nDistance < neighbourAvoidingDistance)
                     {
                         vavoid = vavoid + (this.transform.position - enemy.transform.position);
-                        Debug.DrawLine(this.transform.position, vavoid, Color.green);
-                        Debug.Log(gameObject.name + " avoiding " + enemy.gameObject.name + " running to: " + vavoid);
                     }
                 }
             }
@@ -100,7 +98,9 @@ public class EnemyAI : DamageableEntity
 
         if(groupSize > 0)
         {
-            Vector3 direction = vavoid - transform.position;
+            //tal vez aca se puede hacer algo, tipo restar el avoid al player y sacar un vector en el cual esquive pero siga persiguiendo
+            Vector3 direction = (transform.position - vavoid) - target.transform.position;
+            Debug.DrawLine(this.transform.position, direction, Color.green);
             if (direction != Vector3.zero)
             {
                 transform.position = Vector2.MoveTowards(transform.position, direction, speed * Time.deltaTime);

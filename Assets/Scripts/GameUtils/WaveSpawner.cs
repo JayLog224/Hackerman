@@ -28,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
             enemiesRemainingToSpawn--;
 
 
-            GameObject spawnedEnemy = Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
+            GameObject spawnedEnemy = Instantiate(enemy, GetRandomSpawnPoint(), Quaternion.identity);
             allEnemies.Add(spawnedEnemy);
             spawnedEnemy.GetComponent<DamageableEntity>().OnDeath += OnEnemyDeath;
         }
@@ -57,5 +57,19 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("Enemies to spawn: " + currentWave.enemyCount);
             enemiesRemainingAlive = enemiesRemainingToSpawn;
         }
+    }
+
+    Vector3 GetRandomSpawnPoint()
+    {
+        float spawnY = Random.Range
+                (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
+        float spawnX = Random.Range
+            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+
+        Vector3 spawnPoint = new Vector3(spawnX, spawnY, 0f);
+
+
+
+        return spawnPoint;
     }
 }
