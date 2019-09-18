@@ -21,7 +21,6 @@ public class EnemyAI : DamageableEntity
     Transform target;
     Vector2 animDirection;
 
-    // Start is called before the first frame update
     public override void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -103,10 +102,12 @@ public class EnemyAI : DamageableEntity
         if (Vector2.Distance(transform.position, target.position) > stoppingDistanceForTarget)
         {
             movementDirection = Vector2.MoveTowards(transform.position, path.vectorPath[currentWaypoint], speed * Time.deltaTime);
+            Debug.Log("chasing target...");
         }
         else if(Vector2.Distance(transform.position, target.position) < stoppingDistanceForTarget && Vector2.Distance(transform.position, target.position) > retreatDistanceForTarget)
         {
             movementDirection = path.vectorPath[currentWaypoint]; // ojo si esto se porta raro, volverlo a movementDirection = this.transform.position;
+            Debug.Log("staying away from target...");
         }
         else if (Vector2.Distance(transform.position, target.position) < retreatDistanceForTarget)
         {
@@ -117,11 +118,13 @@ public class EnemyAI : DamageableEntity
                 lastWaypoint = currentWaypoint--;
             }
      
-            movementDirection = Vector2.MoveTowards(transform.position, path.vectorPath[lastWaypoint], speed * Time.deltaTime);
+            movementDirection = Vector2.MoveTowards(transform.position, path.vectorPath[lastWaypoint], -speed * Time.deltaTime);
+            Debug.Log("retreating from target");
         }
         else
         {
             movementDirection = path.vectorPath[currentWaypoint];
+            Debug.Log("quieto ahi...");
         }
 
         return movementDirection;
