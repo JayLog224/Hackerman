@@ -9,6 +9,9 @@ public class WaveSpawner : MonoBehaviour
     public GameObject enemy;
     public List<GameObject> allEnemies;
 
+    public GameObject[] spawnPoints;
+    float spawnPointOffset = 3f;
+
     int enemiesRemainingToSpawn;
     int enemiesRemainingAlive;
     float nextSpawnTime;
@@ -28,7 +31,7 @@ public class WaveSpawner : MonoBehaviour
             enemiesRemainingToSpawn--;
 
 
-            GameObject spawnedEnemy = Instantiate(enemy, GetRandomSpawnPoint(), Quaternion.identity);
+            GameObject spawnedEnemy = Instantiate(enemy, GetRandomSpawnPoints(), Quaternion.identity);
             allEnemies.Add(spawnedEnemy);
             spawnedEnemy.GetComponent<DamageableEntity>().OnDeath += OnEnemyDeath;
         }
@@ -59,17 +62,33 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    Vector3 GetRandomSpawnPoint()
+    Vector3 GetRandomSpawnPoints()
     {
-        float spawnY = Random.Range
-                (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
-        float spawnX = Random.Range
-            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+        int random = Random.Range(0, spawnPoints.Length);
 
-        Vector3 spawnPoint = new Vector3(spawnX, spawnY, 0f);
+        float spawnX = Random.Range(spawnPoints[random].transform.position.x - spawnPointOffset, spawnPoints[random].transform.position.x + spawnPointOffset);
+        float spawnY = Random.Range(spawnPoints[random].transform.position.y - spawnPointOffset, spawnPoints[random].transform.position.y + spawnPointOffset);
 
-
+        Vector3 spawnPoint = new Vector3(spawnX, spawnY, 0);
 
         return spawnPoint;
     }
+
+    // D E P R E C A T E D . . .
+
+    //Vector3 GetRandomSpawnPoint()
+    //{
+    //    float spawnY = Random.Range
+    //            (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height)).y);
+    //    float spawnX = Random.Range
+    //        (Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+
+    //    Vector3 spawnPoint = new Vector3(spawnX, spawnY, 0f);
+
+
+
+    //    return spawnPoint;
+    //}
+
+
 }

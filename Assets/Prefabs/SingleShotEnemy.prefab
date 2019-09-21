@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3208752777767004724}
   - component: {fileID: 4262389000115184360}
   - component: {fileID: 8380534207391875010}
-  - component: {fileID: 3545098256996572952}
+  - component: {fileID: 8243131652065910044}
   m_Layer: 10
   m_Name: SingleShotEnemy
   m_TagString: Untagged
@@ -245,7 +245,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc79ceaf5eeae548b66edcc81574acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &3545098256996572952
+  startingHitpoints: 2
+  bullet: {fileID: 3044749447882058376, guid: 4183b9c65fddedf4fb8eaf5850fa1102, type: 3}
+  animator: {fileID: 3275832438435562603}
+  stateMachine: {fileID: 8243131652065910044}
+  firepoint: {fileID: 3275832438349766746}
+  speed: 5
+  aStar: {fileID: 0}
+--- !u!95 &8243131652065910044
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
