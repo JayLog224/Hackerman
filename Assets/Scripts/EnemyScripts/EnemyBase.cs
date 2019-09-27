@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using Assets.Scripts.GameUtils;
+
+
 
 public abstract class EnemyBase : DamageableEntity
 {
@@ -11,7 +12,6 @@ public abstract class EnemyBase : DamageableEntity
     public Animator stateMachine;
     public Transform firepoint;
     public float speed = 5f;
-
 
     protected GameObject player;
     public AStarService aStar;
@@ -40,6 +40,7 @@ public abstract class EnemyBase : DamageableEntity
     {
         stateMachine.SetFloat("Distance", Vector2.Distance(transform.position, player.transform.position));
         Animate();
+        Debug.Log("direction: " + movementDirection);
     }
 
     public void Fire()
@@ -56,6 +57,21 @@ public abstract class EnemyBase : DamageableEntity
     public void StartFiring()
     {
         InvokeRepeating("Fire", 0.5f, 0.5f);
+    }
+
+    public void Retreat()
+    {
+        float distanceFromTarget = stateMachine.GetFloat("Distance");
+        if (distanceFromTarget < aStar.retreatDistanceForTarget)
+        {
+            movementDirection = Vector2.MoveTowards(transform.position, player.transform.position, -speed * Time.deltaTime);
+        }
+        transform.position = movementDirection;
+    }
+
+    public void StopRetreating()
+    {
+        transform.position = transform.position;
     }
 
     public virtual void Chase()
@@ -94,7 +110,6 @@ public abstract class EnemyBase : DamageableEntity
 
     public virtual void StopChasing()
     {
-        Debug.Log("Stop Chasing...");
         if (aStar.currentWaypoint > 0)
         {
             //transform.position = aStar.path.vectorPath[aStar.currentWaypoint];

@@ -1,0 +1,511 @@
+fileFormatVersion: 2
+guid: a8b13a00d9bee98499710b3c6c8bfa62
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1190375733162499941
+    second: 3Shot_Walk_Left1
+  - first:
+      213: -2788753273676351499
+    second: 3Shot_Walk_Left2
+  - first:
+      213: -798502327348655659
+    second: 3Shot_Walk_Right1
+  - first:
+      213: -9071828047402011167
+    second: 3Shot_Walk_Right2
+  - first:
+      213: -3063323566013107835
+    second: 3Shot_Walk_UpLeft1
+  - first:
+      213: 876443819349156739
+    second: 3Shot_Walk_UpLeft2
+  - first:
+      213: 45275486205344478
+    second: 3Shot_Walk_UpRight1
+  - first:
+      213: 7249814276825370690
+    second: 3Shot_Walk_UpRight2
+  - first:
+      213: 8612914873933104969
+    second: 3Shot_Walk_Up1
+  - first:
+      213: -1861387640520180938
+    second: 3Shot_Walk_Up2
+  - first:
+      213: 6324114051243867733
+    second: 3Shot_Walk_DownLeft1
+  - first:
+      213: 2444390082059247331
+    second: 3Shot_Walk_DownLeft2
+  - first:
+      213: -1760163294795909007
+    second: 3Shot_Walk_DownRight1
+  - first:
+      213: 4004445475821436277
+    second: 3Shot_Walk_DownRight2
+  - first:
+      213: -6178456699019264568
+    second: 3Shot_Walk_Down1
+  - first:
+      213: -5500353375761880622
+    second: 3Shot_Walk_Down2
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 3Shot_Walk_Left1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 146
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149e747d81c967d49acdebb9bf4c64aa
+      internalID: 1190375733162499941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Left2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 146
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc28c32b56a0f24e9d3ed2ff7dfb900
+      internalID: -2788753273676351499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Right1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 146
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7cd13dac82e3644586002639845a86a
+      internalID: -798502327348655659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Right2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 146
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554fe93a092155741a4186a342a059f3
+      internalID: -9071828047402011167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_UpLeft1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 114
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15aa985fc98807a40aeba9f37d62fc66
+      internalID: -3063323566013107835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_UpLeft2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 116
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b571beb022629b428a3dde9baa148b7
+      internalID: 876443819349156739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_UpRight1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 116
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea84db25a565c94da029c997be91ecb
+      internalID: 45275486205344478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_UpRight2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 114
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3aeb26c97394a648903601dded9f53f
+      internalID: 7249814276825370690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Up1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 78
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b30b4aac600164ead321cbce627c09
+      internalID: 8612914873933104969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Up2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 78
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae68ddd7ea770243a1989ee76cd49fd
+      internalID: -1861387640520180938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_DownLeft1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 44
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ebfe28c0857004eb035ba01eab8c4c
+      internalID: 6324114051243867733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_DownLeft2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 46
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bf4c3e99d8f0842bdc01e6b3eb68c0
+      internalID: 2444390082059247331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_DownRight1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 46
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9259520bd3c2a4aa74f82a402d3850
+      internalID: -1760163294795909007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_DownRight2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 44
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8298814d3f667642aad4e3777556156
+      internalID: 4004445475821436277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Down1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 10
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c55d7640f6a7f2f4a99caf7663ce9d08
+      internalID: -6178456699019264568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3Shot_Walk_Down2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 10
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3f776f3f1fd9f44815458c8feb807f
+      internalID: -5500353375761880622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

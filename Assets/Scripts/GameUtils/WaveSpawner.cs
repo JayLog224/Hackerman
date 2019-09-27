@@ -6,7 +6,7 @@ using Assets.Scripts.GameUtils;
 public class WaveSpawner : MonoBehaviour
 {
     public Wave[] waves;
-    public GameObject enemy;
+   //public GameObject enemy;
     public List<GameObject> allEnemies;
 
     public GameObject[] spawnPoints;
@@ -30,11 +30,15 @@ public class WaveSpawner : MonoBehaviour
             nextSpawnTime = Time.time + currentWave.timeBetweenSpawns;
             enemiesRemainingToSpawn--;
 
-
-            GameObject spawnedEnemy = Instantiate(enemy, GetRandomSpawnPoints(), Quaternion.identity);
-            allEnemies.Add(spawnedEnemy);
-            spawnedEnemy.GetComponent<DamageableEntity>().OnDeath += OnEnemyDeath;
+            SpawnEnemiesForWave(enemiesRemainingToSpawn);
         }
+    }
+
+    void SpawnEnemiesForWave(int count)
+    {
+        GameObject spawnedEnemy = Instantiate(currentWave.enemyTypes[count], GetRandomSpawnPoints(), Quaternion.identity);
+        allEnemies.Add(spawnedEnemy);
+        spawnedEnemy.GetComponent<DamageableEntity>().OnDeath += OnEnemyDeath;
     }
 
     void OnEnemyDeath()
@@ -89,6 +93,4 @@ public class WaveSpawner : MonoBehaviour
 
     //    return spawnPoint;
     //}
-
-
 }

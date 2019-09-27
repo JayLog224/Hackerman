@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.GameUtils
 {
@@ -11,5 +12,6 @@ namespace Assets.Scripts.GameUtils
     {
         public int enemyCount;
         public float timeBetweenSpawns;
+        public GameObject[] enemyTypes;
     }
 }
