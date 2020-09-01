@@ -25,7 +25,7 @@ public class DamageableEntity : MonoBehaviour, IDamageable
         }
     }
 
-    private void Die()
+    public virtual void Die()
     {
         isDead = true;
         if (OnDeath != null)

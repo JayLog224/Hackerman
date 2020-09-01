@@ -10,7 +10,7 @@ public class WaveSpawner : MonoBehaviour
     public List<GameObject> allEnemies;
 
     public GameObject[] spawnPoints;
-    float spawnPointOffset = 3f;
+    float spawnPointOffset = 1.5f;
 
     int enemiesRemainingToSpawn;
     int enemiesRemainingAlive;
@@ -36,6 +36,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemiesForWave(int count)
     {
+
         GameObject spawnedEnemy = Instantiate(currentWave.enemyTypes[count], GetRandomSpawnPoints(), Quaternion.identity);
         allEnemies.Add(spawnedEnemy);
         spawnedEnemy.GetComponent<DamageableEntity>().OnDeath += OnEnemyDeath;

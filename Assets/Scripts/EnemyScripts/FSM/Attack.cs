@@ -8,7 +8,7 @@ public class Attack : NPCBaseFSM
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         base.OnStateEnter(animator, stateInfo, layerIndex);
-        NPC.GetComponent<SingleShotEnemyAI>().StartFiring();
+        NPC.GetComponent<EnemyBase>().StartFiring();
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,7 +20,7 @@ public class Attack : NPCBaseFSM
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        NPC.GetComponent<SingleShotEnemyAI>().StopFiring();
+        NPC.GetComponent<EnemyBase>().StopFiring();
     }
 
 }

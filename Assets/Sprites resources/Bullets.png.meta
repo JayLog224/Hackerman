@@ -133,7 +133,7 @@ TextureImporter:
     second: Bullet_EnemySingleShot1
   - first:
       213: -6331664980684406410
-    second: Bullets_43
+    second: Bullet_Enemy3Shot1
   - first:
       213: 666290146956312264
     second: Bullets_44
@@ -1886,7 +1886,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_43
+      name: Bullet_Enemy3Shot1
       rect:
         serializedVersion: 2
         x: 380

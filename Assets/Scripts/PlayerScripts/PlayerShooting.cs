@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.GameUtils;
+using UnityEngine.SceneManagement;
 public class PlayerShooting : DamageableEntity
 {
     public Transform firepoint;
@@ -63,5 +64,11 @@ public class PlayerShooting : DamageableEntity
 
         Destroy(tempProjectile, 3.0f);
         shootingRecoil = SHOOTING_RECOIL_TIME;
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        SceneManager.LoadScene("MainMenu");
     }
 }

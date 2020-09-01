@@ -6,16 +6,16 @@ public class SingleShotBullet : MonoBehaviour
 {
     public float speed = 10f;
     private float damage = 1f;
-    private Vector3 targetDirection;
 
-    public void Awake()
+    Vector3 targetDirection;
+
+    private void Awake()
     {
-        targetDirection = (GameManager.Instance.player.transform.position - transform.position).normalized;
-        
+       targetDirection = (GameManager.Instance.player.transform.position - transform.position).normalized;
     }
 
-    void LateUpdate()
-    { 
+    private void LateUpdate()
+    {
         transform.position += targetDirection * speed * Time.deltaTime;
     }
 

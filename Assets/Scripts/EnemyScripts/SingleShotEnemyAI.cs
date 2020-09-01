@@ -19,6 +19,13 @@ public class SingleShotEnemyAI : EnemyBase
         base.Start();
     }
 
+    public override void Fire()
+    {
+        base.Fire();
+        GameObject b = Instantiate(bullet, firepoint.position, Quaternion.identity);
+       // b.transform.Rotate(0, 0, Mathf.Atan2(player.transform.position.y, player.transform.position.x) * Mathf.Rad2Deg);
+    }
+
     public override void Chase()
     {
         base.Chase();

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Barrels
   - Enemy
+  - Walls
   layers:
   - Default
   - TransparentFX

@@ -40,21 +40,26 @@ public abstract class EnemyBase : DamageableEntity
     {
         stateMachine.SetFloat("Distance", Vector2.Distance(transform.position, player.transform.position));
         Animate();
+        
         Debug.Log("direction: " + movementDirection);
     }
-
-    public void Fire()
+    
+    public virtual void AttackMelee()
     {
-        GameObject b = Instantiate(bullet, firepoint.position, Quaternion.identity);
-        b.transform.Rotate(0, 0, Mathf.Atan2(player.transform.position.y, player.transform.position.x) * Mathf.Rad2Deg);
+
     }
 
-    public void StopFiring()
+    public virtual void Fire()
+    {
+
+    }
+
+    public virtual void StopFiring()
     {
         CancelInvoke("Fire");
     }
 
-    public void StartFiring()
+    public virtual void StartFiring()
     {
         InvokeRepeating("Fire", 0.5f, 0.5f);
     }
